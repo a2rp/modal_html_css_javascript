@@ -1,45 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>a2rp: Mouse Trailers</title>
-        <link rel="stylesheet" href="style.css" />
-        <script src="script.js" defer></script>
-    </head>
-    <body>
-        <div class="container">
-            <div class="heading">a2rp: Modal Popup</div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#09101b" />
+    <meta name="description" content="A focused HTML, CSS and JavaScript modal subscription form demo." />
+    <meta property="og:title" content="Modal Popup Demo | Ashish Ranjan" />
+    <meta property="og:description" content="A focused HTML, CSS and JavaScript modal subscription form demo." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://a2rp.github.io/modal_html_css_javascript/public/preview.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Modal Popup Demo | Ashish Ranjan" />
+    <meta name="twitter:description" content="A focused HTML, CSS and JavaScript modal subscription form demo." />
+    <meta name="twitter:image" content="https://a2rp.github.io/modal_html_css_javascript/public/preview.png" />
+    <link rel="icon" href="public/favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Modal Popup Demo | Ashish Ranjan</title>
+</head>
+<body>
+    <header class="siteHeader">
+        <a class="brand" href="./"><img src="public/logo.png" alt="Ashish Ranjan logo" /><span><strong>Modal Studio</strong><small>HTML, CSS and JavaScript</small></span></a>
+        <span class="headerBadge">UI component demo</span>
+    </header>
 
-            <div class="modalOpenButton">Click to open subscription form</div>
-        </div>
-        <div class="formContainer">
-            <form action="#">
-                <input
-                    type="text"
-                    class="formInput name"
-                    placeholder="Name"
-                    required
-                />
-                <input
-                    type="email"
-                    class="formInput email"
-                    placeholder="Email"
-                    required
-                />
-                <input
-                    type="text"
-                    class="formInput phone"
-                    placeholder="Phone"
-                    required
-                />
-                <div class="buttonContainer">
-                    <div class="closeButton">CLOSE</div>
-                    <button type="submit" class="subscribeButton">
-                        SUBSCRIBE
-                    </button>
-                </div>
+    <main class="container">
+        <section class="hero">
+            <span class="eyebrow">INTERACTION PATTERN</span>
+            <h1>Simple modal,<br /><em>clear intent.</em></h1>
+            <p>Explore a lightweight subscription modal with accessible controls, a focused form and a calm visual layer.</p>
+            <button class="modalOpenButton" type="button" aria-haspopup="dialog" aria-controls="subscriptionModal">Open subscription form <span aria-hidden="true">&#8599;</span></button>
+            <div class="featureRow"><span><b>01</b> Blur background</span><span><b>02</b> Escape to close</span><span><b>03</b> Responsive layout</span></div>
+        </section>
+    </main>
+
+    <div class="formContainer" id="subscriptionModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modalCard">
+            <button class="closeButton" type="button" aria-label="Close subscription form">&times;</button>
+            <span class="eyebrow">STAY IN THE LOOP</span>
+            <h2 id="modalTitle">Subscribe for updates.</h2>
+            <p class="modalText">A compact form interaction ready to reuse in a landing page.</p>
+            <form id="subscriptionForm">
+                <label for="name">Name</label><input id="name" type="text" class="formInput" placeholder="Your name" required />
+                <label for="email">Email</label><input id="email" type="email" class="formInput" placeholder="you@example.com" required />
+                <label for="phone">Phone</label><input id="phone" type="tel" class="formInput" placeholder="Phone number" required />
+                <div class="buttonContainer"><button class="closeButton secondary" type="button">Cancel</button><button type="submit" class="subscribeButton">Subscribe</button></div>
+                <p class="formMessage" role="status" aria-live="polite"></p>
             </form>
         </div>
-    </body>
+    </div>
+
+    <footer class="siteFooter">
+        <div class="footerLinks">
+            <a href="https://www.ashishranjan.net/" target="_blank" rel="noopener noreferrer" aria-label="Portfolio" title="Portfolio">&#9673;</a>
+            <a href="https://github.com/a2rp" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">&#9670;</a>
+            <a href="https://codepen.io/ash1198" target="_blank" rel="noopener noreferrer" aria-label="CodePen" title="CodePen">&lt;/&gt;</a>
+            <a href="https://www.linkedin.com/in/aashishranjan" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">in</a>
+            <a href="https://www.facebook.com/theash.ashish/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">f</a>
+            <a href="https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">&#9654;</a>
+            <a href="mailto:ash.ranjan09@gmail.com" aria-label="Email" title="Email">@</a>
+            <a href="https://a2rp-donation-page.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Support" title="Support">&#9825;</a>
+            <a href="https://buymeacoffee.com/a2rp" target="_blank" rel="noopener noreferrer" aria-label="Buy Me a Coffee" title="Buy Me a Coffee">&#9749;</a>
+            <a href="https://patreon.com/a2rp" target="_blank" rel="noopener noreferrer" aria-label="Patreon" title="Patreon">P</a>
+        </div>
+        <p>Copyright &copy; <span id="currentYear"></span> <a href="https://www.ashishranjan.net/" target="_blank" rel="noopener noreferrer">Ashish Ranjan</a></p>
+    </footer>
+</body>
 </html>
