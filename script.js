@@ -1,26 +1,22 @@
-window.onload = () => {
-    document.querySelector(".modalOpenButton").addEventListener("click", (event) => {
-        document.querySelector(".container").style.cssText = `
-            filter: blur(8px);
-            -webkit-filter: blur(8px);
-        `;
-        document.querySelector(".formContainer").style.cssText = `
-            visibility: visible;
-            opacity: 1;
-            transform: translateY(0);
-        `;
-    });
+const page = document.querySelector(".container");
+const modal = document.querySelector(".formContainer");
+const openButton = document.querySelector(".modalOpenButton");
+const closeButtons = document.querySelectorAll(".closeButton");
+const form = document.querySelector("#subscriptionForm");
+const message = document.querySelector(".formMessage");
+const year = document.querySelector("#currentYear");
 
-    document.querySelector(".closeButton").addEventListener("click", (event) => {
-        document.querySelector(".container").style.cssText = `
-            filter: blur(0);
-            -webkit-filter: blur(0);
-        `;
-        document.querySelector(".formContainer").style.cssText = `
-            visibility: hidden;
-            opacity: 0;
-            transform: translateY(-30px);
-        `;
-    });
+const setModalState = (isOpen) => {
+    modal.classList.toggle("isOpen", isOpen);
+    modal.setAttribute("aria-hidden", String(!isOpen));
+    page.classList.toggle("isBlurred", isOpen);
+    document.body.classList.toggle("modalOpen", isOpen);
+    if (isOpen) modal.querySelector("input")?.focus();
 };
 
+openButton.addEventListener("click", () => setModalState(true));
+closeButtons.forEach((button) => button.addEventListener("click", () => setModalState(false)));
+modal.addEventListener("mousedown", (event) => { if (event.target === modal) setModalState(false); });
+document.addEventListener("keydown", (event) => { if (event.key === "Escape" && modal.classList.contains("isOpen")) setModalState(false); });
+form.addEventListener("submit", (event) => { event.preventDefault(); message.textContent = "Thanks for subscribing."; form.reset(); });
+year.textContent = new Date().getFullYear();

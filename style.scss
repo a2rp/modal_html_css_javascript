@@ -1,117 +1,79 @@
-*,
-::before,
-::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 12px;
+* { box-sizing: border-box; }
+:root {
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #edf4ff;
+    background: #09101b;
 }
-
+html { min-width: 320px; scroll-behavior: smooth; }
+body { min-width: 320px; min-height: 100vh; margin: 0; background: #09101b; }
+body.modalOpen { overflow: hidden; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+.siteHeader {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 76px;
+    padding: 0 6vw;
+    border-bottom: 1px solid rgba(164, 191, 224, 0.16);
+    background: rgba(9, 16, 27, 0.88);
+    backdrop-filter: blur(16px);
+}
+.brand { display: inline-flex; align-items: center; gap: 0.7rem; color: inherit; text-decoration: none; }
+.brand img { width: 42px; height: 42px; padding: 0.3rem; border: 1px solid #3c5877; border-radius: 11px; object-fit: contain; background: #14273e; }
+.brand span { display: grid; gap: 0.1rem; }
+.brand strong { font-size: 1rem; }
+.brand small { color: #8da1bb; font-size: 0.7rem; }
+.headerBadge { color: #91a7c3; font-size: 0.78rem; }
 .container {
-    background-color: aliceblue;
-    background-image: url("https://picsum.photos/1000/1000");
-    background-repeat: no-repeat;
+    min-height: calc(100vh - 76px);
+    padding: 150px 6vw 100px;
+    background-image: linear-gradient(135deg, rgba(13, 26, 45, 0.94), rgba(9, 16, 27, 0.96) 58%, rgba(7, 18, 30, 0.97)), url("public/modal-background.jpg");
     background-position: center;
     background-size: cover;
-    min-height: 100vh;
-    padding: 15px;
-    transition: filter 0.5s ease, -webkit-filter 0.5s ease;
-
-    .heading {
-        font-weight: bolder;
-        background-color: #fff;
-        padding: 15px;
-        color: #000;
-    }
-
-    .modalOpenButton {
-        position: absolute;
-        margin: auto;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        height: 40px;
-        width: 250px;
-        text-align: center;
-        background-color: orangered;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease, color 0.3s ease;
-
-        &:hover {
-            background-color: #f00;
-            color: #fff;
-        }
-    }
+    transition: filter 220ms ease;
 }
-
-.formContainer {
-    position: absolute;
-    margin: auto;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 300px;
-    height: 250px;
-    background-color: #000;
-    border-radius: 5px;
-
-    visibility: hidden;
-    opacity: 0;
-    transform: translateY(-30px);
-    transition: visibility 0.3s linear, opacity 0.3s linear,
-        transform 0.3s linear;
-
-    form {
-        width: 100%;
-        height: 100%;
-        padding: 15px;
-
-        .formInput {
-            display: block;
-            width: 100%;
-            height: 30px;
-            margin-top: 15px;
-            padding-left: 15px;
-        }
-
-        .buttonContainer {
-            margin-top: 30px;
-            display: flex;
-            gap: 30px;
-
-            .closeButton,
-            .subscribeButton {
-                width: 100%;
-                height: 40px;
-                cursor: pointer;
-                border-radius: 5px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-weight: bolder;
-                color: #fff;
-            }
-            .closeButton {
-                background-color: brown;
-
-                &:hover {
-                    background-color: red;
-                }
-            }
-            .subscribeButton {
-                background-color: #00008a;
-
-                &:hover {
-                    background-color: #0000aa;
-                }
-            }
-        }
-    }
+.container.isBlurred { filter: blur(7px); }
+.hero { max-width: 850px; margin: 0 auto; }
+.eyebrow { color: #6dc6ff; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.15em; }
+.hero h1 { margin: 1rem 0; color: #f6f9ff; font-size: clamp(3rem, 9vw, 7.5rem); line-height: 0.92; letter-spacing: -0.08em; }
+.hero h1 em { color: #82b5da; font-style: normal; }
+.hero p { max-width: 520px; color: #9ab0c9; font-size: 1.05rem; line-height: 1.7; }
+.modalOpenButton { display: inline-flex; align-items: center; gap: 0.7rem; min-height: 50px; margin-top: 2rem; padding: 0 1.25rem; border: 1px solid #6dc6ff; border-radius: 11px; color: #07121e; background: #6dc6ff; font-weight: 800; transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease; }
+.modalOpenButton:hover { border-color: #fff; background: #9bdcff; box-shadow: 0 0 22px rgba(109, 198, 255, 0.25); }
+.featureRow { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 5rem; color: #90a7bf; font-size: 0.82rem; }
+.featureRow span { display: flex; gap: 0.5rem; }
+.featureRow b { color: #6dc6ff; }
+.formContainer { position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; padding: 1rem; opacity: 0; visibility: hidden; background: rgba(2, 7, 13, 0.68); transition: opacity 180ms ease, visibility 180ms ease; }
+.formContainer.isOpen { opacity: 1; visibility: visible; }
+.modalCard { position: relative; width: min(100%, 430px); padding: 2rem; border: 1px solid rgba(143, 203, 244, 0.3); border-radius: 20px; background: #0c1d31; box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45); transform: translateY(-12px); transition: transform 180ms ease; }
+.isOpen .modalCard { transform: translateY(0); }
+.modalCard > .closeButton { position: absolute; top: 1rem; right: 1rem; width: 32px; height: 32px; border: 1px solid rgba(164, 191, 224, 0.25); border-radius: 50%; color: #bdd0e4; background: transparent; font-size: 1.3rem; }
+.modalCard h2 { margin: 0.7rem 0 0.5rem; font-size: 1.8rem; }
+.modalText { margin: 0 0 1.3rem; color: #90a7bf; line-height: 1.5; }
+.modalCard label { display: block; margin-top: 0.9rem; margin-bottom: 0.35rem; color: #b9cde1; font-size: 0.8rem; font-weight: 700; }
+.formInput { width: 100%; min-height: 44px; padding: 0 0.8rem; border: 1px solid rgba(164, 191, 224, 0.25); border-radius: 9px; outline: none; color: #fff; background: #081523; }
+.formInput:focus { border-color: #6dc6ff; box-shadow: 0 0 0 3px rgba(109, 198, 255, 0.12); }
+.buttonContainer { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 1.4rem; }
+.buttonContainer button { min-height: 44px; border-radius: 9px; font-weight: 800; transition: border-color 180ms ease, box-shadow 180ms ease; }
+.buttonContainer button:hover { box-shadow: 0 0 16px rgba(109, 198, 255, 0.16); }
+.secondary { border: 1px solid #88545b; color: #ffcbd0; background: transparent; }
+.subscribeButton { border: 1px solid #6dc6ff; color: #07121e; background: #6dc6ff; }
+.formMessage { min-height: 1.2rem; margin: 0.8rem 0 0; color: #83e0b1; font-size: 0.85rem; }
+.siteFooter { padding: 2rem 1rem 1.25rem; border-top: 1px solid rgba(164, 191, 224, 0.16); text-align: center; background: #081320; }
+.footerLinks { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.45rem; }
+.footerLinks a { display: grid; min-width: 35px; height: 35px; place-items: center; padding: 0 0.45rem; border: 1px solid rgba(164, 191, 224, 0.24); border-radius: 9px; color: #b7cce0; font-size: 0.78rem; font-weight: 800; text-decoration: none; transition: color 180ms ease, border-color 180ms ease, box-shadow 180ms ease; }
+.footerLinks a:hover { color: #fff; border-color: #6dc6ff; box-shadow: 0 0 15px rgba(109, 198, 255, 0.18); }
+.siteFooter p { margin: 1rem 0 0; color: #8096ad; font-size: 0.8rem; }
+.siteFooter p a { color: #fff; font-weight: 700; }
+@media (max-width: 600px) {
+    .siteHeader { padding: 0 1rem; }
+    .headerBadge { display: none; }
+    .container { padding: 125px 1rem 80px; }
+    .featureRow { margin-top: 3rem; }
+    .modalCard { padding: 1.5rem; }
 }

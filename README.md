@@ -1,26 +1,41 @@
-# modal_html_css_javascript
-modal html css javascript
+# Modal Popup Demo
 
-<!-- https://youtu.be/fKT_O5gKMLE //-->
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/fKT_O5gKMLE/0.jpg)](https://www.youtube.com/watch?v=fKT_O5gKMLE)
+A small, responsive modal subscription form built with plain HTML, CSS and JavaScript. The demo focuses on clear interaction: open the modal, focus the form, close with the buttons, click outside, or press Escape.
 
+## Features
 
-## Links
+- Fixed branded header with local logo and favicon
+- Responsive hero section with local visual asset
+- Accessible modal dialog with blur backdrop
+- Form validation, success feedback, outside-click and Escape-to-close behavior
+- Icon-only social and support links in the footer
 
-- Portfolio: [https://www.ashishranjan.net](https://www.ashishranjan.net)
-- GitHub: [https://github.com/a2rp](https://github.com/a2rp)
-- CodePen: [https://codepen.io/ash1198](https://codepen.io/ash1198)
-- LinkedIn: [https://www.linkedin.com/in/aashishranjan](https://www.linkedin.com/in/aashishranjan)
-- Facebook: [https://www.facebook.com/theash.ashish/](https://www.facebook.com/theash.ashish/)
-- YouTube: [https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1](https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1)
-- Email: [ash.ranjan09@gmail.com](mailto:ash.ranjan09@gmail.com)
+## Tech stack
 
-## Support
+- HTML5
+- CSS3
+- Vanilla JavaScript
 
-- Support: [https://a2rp-donation-page.netlify.app/](https://a2rp-donation-page.netlify.app/)
-- Buy Me A Coffee: [https://buymeacoffee.com/a2rp](https://buymeacoffee.com/a2rp)
-- Patreon: [https://patreon.com/a2rp](https://patreon.com/a2rp)
-<!-- Project links -->
+## Run locally
+
+```bash
+npx serve .
+```
+
+## Deploy
+
+Prepare the static output and publish it to GitHub Pages:
+
+```powershell
+New-Item -ItemType Directory -Force dist
+Copy-Item index.html,script.js,style.css -Destination dist -Force
+Copy-Item public -Destination dist -Recurse -Force
+npm run deploy
+```
+
+## Screenshot
+
+![Modal popup demo](screenshot.png)
 
 ## Links
 
@@ -38,4 +53,4 @@ modal html css javascript
 
 - Support: [https://a2rp-donation-page.netlify.app/](https://a2rp-donation-page.netlify.app/)
 - Buy Me a Coffee: [https://buymeacoffee.com/a2rp](https://buymeacoffee.com/a2rp)
-- Patreon: [https://www.patreon.com/a2rp](https://www.patreon.com/a2rp)
+- Patreon: [https://patreon.com/a2rp](https://patreon.com/a2rp)
