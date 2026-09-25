@@ -77,3 +77,52 @@ button { cursor: pointer; }
     .featureRow { margin-top: 3rem; }
     .modalCard { padding: 1.5rem; }
 }
+.footerLinks svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.goTopButton {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 15;
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border: 1px solid #6dc6ff;
+    border-radius: 50%;
+    color: #07121e;
+    background: #6dc6ff;
+    cursor: pointer;
+    transition: border-color 180ms ease, box-shadow 180ms ease, text-shadow 180ms ease;
+}
+
+.goTopButton[hidden] {
+    display: none;
+}
+
+.goTopButton:hover,
+.goTopButton:focus-visible {
+    border-color: #ffffff;
+    box-shadow: 0 0 20px rgba(109, 198, 255, 0.32);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.45);
+    outline: none;
+}
+
+.goTopButton svg {
+    width: 18px;
+    height: 18px;
+}
+
+@media (max-width: 600px) {
+    .goTopButton {
+        right: 16px;
+        bottom: 16px;
+    }
+}
