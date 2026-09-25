@@ -20,3 +20,15 @@ modal.addEventListener("mousedown", (event) => { if (event.target === modal) set
 document.addEventListener("keydown", (event) => { if (event.key === "Escape" && modal.classList.contains("isOpen")) setModalState(false); });
 form.addEventListener("submit", (event) => { event.preventDefault(); message.textContent = "Thanks for subscribing."; form.reset(); });
 year.textContent = new Date().getFullYear();
+const goTopButton = document.querySelector(".goTopButton");
+
+const updateGoTopButton = () => {
+    goTopButton.hidden = window.scrollY <= 420;
+};
+
+goTopButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+window.addEventListener("scroll", updateGoTopButton, { passive: true });
+updateGoTopButton();

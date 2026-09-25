@@ -4,7 +4,7 @@ A small, responsive modal subscription form built with plain HTML, CSS and JavaS
 
 ## Features
 
-- Fixed branded header with local logo and favicon
+- Fixed branded header with local logo and favicon plus a floating go-to-top control
 - Responsive hero section with local visual asset
 - Accessible modal dialog with blur backdrop
 - Form validation, success feedback, outside-click and Escape-to-close behavior
