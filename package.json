@@ -2,7 +2,7 @@
   "name": "modal-html-css-javascript",
   "version": "1.0.0",
   "private": true,
-  "description": "Responsive HTML, CSS and JavaScript modal subscription form demo.",
+  "description": "Accessible client-side modal form demo built with HTML, CSS and JavaScript.",
   "homepage": "https://a2rp.github.io/modal_html_css_javascript/",
   "license": "MIT",
   "scripts": {
